@@ -16,7 +16,8 @@
     <ul>
     {% for dato in datos %}
         <li>
-            <a href="/receta/{{dato.id}}">{{dato.titulo}}</a><br />
+            <a href="/receta/{{dato.id}}">{{dato.titulo}}</a>
+            <br />
             <img src="{{MEDIA_URL}}{{dato.imagen}}">
         </li>
     {% endfor %}
