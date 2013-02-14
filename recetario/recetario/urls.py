@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
 
     url(r'^$', 'principal.views.inicio'),
-    url(r'^usuarios/$','principal.views.usuarios'),
+    url(r'^usuarios/$', 'principal.views.usuarios'),
+    url(r'^recetas/$', 'principal.views.lista_recetas'),
     url(r'^sobre/$', 'principal.views.sobre'),
 )
