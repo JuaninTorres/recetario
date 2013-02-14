@@ -17,4 +17,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 #    url(r'^$', 'principal.views.lista_bebidas'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
+
+    url(r'^$', 'principal.views.inicio'),
+    url(r'^usuarios/$','principal.views.usuarios'),
+    url(r'^sobre/$', 'principal.views.sobre'),
 )
