@@ -1,25 +1,22 @@
-<style>
+{% extends 'base.html' %}
+{% block titulo %}Recetas Registradas{% endblock %}
+{% block style_css %}
     img { width: 100px; }
-</style>
-<header>
-    <nav>
-        <ul>
-            <li><a href='/'>Inicio</a></li>
-            <li><a href='/usuarios'>Usuarios</a></li>
-            <li><a href='/recetas'>Recetas</a></li>
-            <li><a href='/sobre'>Sobre</a></li>
-        </ul>
-    </nav>
-</header>
-<section>
+{% endblock %}
+{% block encabezado %}
     <h1>Nuestras recetas</h1>
+{% endblock %}
+
+{% block contenido %}
     <ul>
     {% for dato in datos %}
         <li>
-            <a href="/receta/{{dato.id}}">{{dato.titulo}}</a>
-            <br />
+            <a href="{% url principal.views.detalle_receta dato.id %}">{{dato.titulo}}</a>
             <img src="{{MEDIA_URL}}{{dato.imagen}}">
         </li>
+    {% empty %}
+        <li>Aun no hay recetas registradas</li>
     {% endfor %}
     </ul>
-</section>
+    <a href="/receta/nueva">Agregar una receta</a>
+{% endblock %}

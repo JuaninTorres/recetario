@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Recetario - {% block titulo %}{% endblock %}</title>
+        <link rel='stylesheet' href='{{STATIC_URL}}css/base.css' />
+        <link rel='shortcut icon' href='{{STATIC_URL}}img/icono.png' />
+        <style>
+            {% block style_css %}{% endblock %}
+        </style>
+        <script src='{{STATIC_URL}}js/jquery-1.9.1.min.js'></script>
+        <script src='{{STATIC_URL}}js/demo.js'></script>
+    </head>
+    <body>
+        <header>
+            {% block encabezado %}{% endblock %}
+            <nav>
+                <ul>
+                    <li><a href='/'>Inicio</a></li>
+                    <li><a href='/ingresar'>Ingresar</a></li>
+                    <li><a href='/usuarios'>Usuarios</a></li>
+                    <li><a href='/recetas'>Recetas</a></li>
+                    <li><a href='/comenta'>Comenta</a></li>
+                    <li><a href='/sobre'>Sobre</a></li>
+                    <li><a href='/contacto'>Contáctanos</a></li>
+                    <li><a href='/cerrar'>Cerrar sesión</a></li>
+                </ul>
+            </nav>
+            <hr />
+        </header>
+        <section class='contenido'>
+            {% block contenido %}{% endblock %}
+        </section>
+        <footer>
+            <p>Proyecto de ejercicio de aprendizaje de Django</p>
+        </footer>
+    </body>
+</html>
