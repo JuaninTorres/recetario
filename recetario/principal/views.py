@@ -92,10 +92,14 @@ def ingresar(request):
         return HttpResponseRedirect('/privado')
     if request.method == 'POST':
         formulario = AuthenticationForm(request.POST)
-        if formulario.is_valid():
+        if formulario.is_valid:
+            print 'Se reconocio formulario valido'
             usuario = request.POST['username']
             clave = request.POST['password']
             acceso = authenticate(username=usuario, password=clave)
+            print 'Usuario recibido: ' + usuario
+            print 'password recibido: ' + clave
+            print acceso
             if acceso is not None:
                 if acceso.is_active:
                     login(request, acceso)
